@@ -1,8 +1,8 @@
 #include<iostream>
 int main() {
-	int a, b, c, d;
+	int a, b, c;
 	std::cin >> a >> b >> c;
 	c -= a;
-	d = a - b;
-	std::cout << c / d + ((c % d > 0) ? 2 : 1);
+	a -= b;
+	std::cout << c / a + ((c % a > 0) ? 2 : 1);
 }
