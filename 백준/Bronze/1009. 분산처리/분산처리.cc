@@ -1,8 +1,7 @@
 #include<iostream>
 using namespace std;
 int main() {
-	int N, a, b, c;
-	int a2[]{ 6,2,4,8 }, a3[]{ 1,3,9,7 }, a4[]{ 6,4 }, a5[]{ 5 }, a6[]{ 6 }, a7[]{ 1,7,9,3 }, a8[]{ 6,8,4,2 }, a9[]{ 1,9 };
+	int N, a, b, c, a2[]{6,2,4,8}, a3[]{1,3,9,7}, a4[]{6,4}, a7[]{1,7,9,3}, a8[]{6,8,4,2}, a9[]{1,9};
 	cin >> N;
 	while (N--) {
 		cin >> a >> b;
@@ -19,4 +18,4 @@ int main() {
 		else c = 10;
 		cout << c << "\n";
 	}
-}	
+}
