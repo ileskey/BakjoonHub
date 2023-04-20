@@ -2,35 +2,25 @@
 #include<algorithm>
 using namespace std;
 int main() {
-	int* x, * y, * z, a, b,c, i, j, k, bef = 0, aft = 0;
-	cin >> i >> j >> k;
-	x = new int[i];
-	y = new int[j];
-	z = new int[k];
-	b = i < j ? i : j;
-	b = b < k ? b : k;
-	for (a = 0; a < i; a++)cin >> x[a];
-	for (a = 0; a < j; a++)cin >> y[a];
-	for (a = 0; a < k; a++)cin >> z[a];
-	sort(x, x + i,greater<>());
-	sort(y, y + j, greater<>());
-	sort(z, z + k, greater<>());
+	int * arr[3], brr[3], a, b, c, bef = 0, aft = 0;
+	cin >> brr[0] >> brr[1] >> brr[2];
+	for(a=0;a<3;a++){
+		arr[a] = new int[brr[a]];
+		for (b = 0; b < brr[a]; b++)cin >> arr[a][b];
+		sort(arr[a], arr[a] + brr[a], greater<>());
+	}
+	b = brr[0] < brr[1] ? brr[0] : brr[1];
+	b = b < brr[2] ? b : brr[2];
 	for (a = 0; a < b; a++) {
-		c= x[a] + y[a] + z[a];
+		c = arr[0][a] + arr[1][a] + arr[2][a];
 		bef += c;
 		aft += (c * 9 / 10);
 	}
-	for (a = b; a < i; a++) {
-		bef += x[a];
-		aft += x[a];
-	}
-	for (a = b; a < j; a++) {
-		bef += y[a];
-		aft += y[a];
-	}
-	for (a = b; a < k; a++) {
-		bef += z[a];
-		aft += z[a];
+	for (a = 0; a < 3; a++) {
+		for (c = b; c < brr[a]; c++) {
+			bef += arr[a][c];
+			aft += arr[a][c];
+		}
 	}
 	cout << bef << "\n" << aft;
 }
