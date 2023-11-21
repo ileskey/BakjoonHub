@@ -2,7 +2,7 @@
 #include<stack>
 #include<string.h>
 int main() {
-	char arr[100000];
+	char arr[100001];
 	scanf("%s", arr);
 	int idx = 0, sum = 0;
 	int len = strlen(arr);
