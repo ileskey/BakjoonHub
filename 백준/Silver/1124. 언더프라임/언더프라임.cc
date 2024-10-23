@@ -1,38 +1,26 @@
 #include<iostream>
-#include<vector>
 using namespace std;
 int main() {
 	ios::sync_with_stdio(0);
 	cin.tie(0);
-	long long int A, B, i, j, n = 0, k, temp, ite, vsize;
-	vector<int> v;
+	int A, B, i, j, n = 0, k, temp;
 	cin >> A >> B;
-	long long int arr[50001] = { 0, 1, };
-	for (i = 2; i < 50001; i++) {
+	int arr[100001] = { 1, 1, };
+	int arr2[100001] = { 0, };
+	for (i = 2; i <= B; i++) {
 		if (arr[i] == 0) {
-			v.push_back(i);
-			for (j = i * i; j < 50001; j += i) {
+			for (j = i + i; j <= B; j += i) {
 				arr[j] = 1;
+				temp = j;
+				while (temp % i == 0) {
+					temp /= i;
+					arr2[j]++;
+				}
 			}
 		}
 	}
-	vsize = v.size();
 	for (i = A; i <= B; i++) {
-		k = 0;
-		ite = 0;
-		temp = i;
-		while (temp != 1) {
-			if (ite == vsize && temp > 50000) {
-				k++;
-				break;
-			}
-			if (temp % v[ite] == 0) {
-				k++;
-				temp /= v[ite];
-			}
-			else ite++;
-		}
-		if (arr[k] == 0)n++;
+		if (arr[i] && !arr[arr2[i]])n++;
 	}
-	cout << n;
+	cout << n << "\n";
 }
