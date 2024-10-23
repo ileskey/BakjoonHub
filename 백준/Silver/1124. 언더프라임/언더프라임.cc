@@ -7,7 +7,7 @@ int main() {
 	long long int A, B, i, j, n = 0, k, temp, ite, vsize;
 	vector<int> v;
 	cin >> A >> B;
-	long long int arr[50001] = { 0, };
+	long long int arr[50001] = { 0, 1, };
 	for (i = 2; i < 50001; i++) {
 		if (arr[i] == 0) {
 			v.push_back(i);
@@ -32,9 +32,7 @@ int main() {
 			}
 			else ite++;
 		}
-		for (ite = 0; ite < vsize; ite++) {
-			if (k == v[ite]) { n++; break; }
-		}
+		if (arr[k] == 0)n++;
 	}
 	cout << n;
 }
