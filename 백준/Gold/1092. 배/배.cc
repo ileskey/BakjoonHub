@@ -5,7 +5,7 @@ int main() {
 	ios::sync_with_stdio(0);
 	cin.tie(0);
 	int arr_crain[51] = {}, arr_stock[51] = {};
-	int N, M, t, max, space, sum = 0;
+	int N, M, t, max, space;
 	cin >> N;
 	for (int i = 0; i < N; i++) {
 		cin >> arr_crain[i];
@@ -29,7 +29,6 @@ int main() {
 	space = 0;
 	for (int i = N - 2; i >= 0; i--) {
 		t = arr_stock[i];
-		sum += t;
 		if (t > max) {
 			if (space >= t) {
 				space -= t;
