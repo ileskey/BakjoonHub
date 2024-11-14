@@ -1,8 +1,5 @@
 #include<iostream>
 using namespace std;
-int my_abs(int x, int y) {
-	return x + y > 0 ? x + y : -x - y;
-}
 int main() {
 	int N, l, r, tmp, min, min_l, min_r, is_negative, arr[100000] = {};
 	cin >> N;
